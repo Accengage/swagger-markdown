@@ -3,6 +3,8 @@
  * Contact info transformer
  */
  module.exports = contact => {
+
+   return null;
    const res = [];
 
    if ('name' in contact) {

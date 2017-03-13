@@ -20,19 +20,19 @@ module.exports = info => {
     }
 
     if ('version' in info) {
-      res.push(`**Version:** ${info.version}\n`);
+      //res.push(`**Version:** ${info.version}\n`);
     }
 
     if ('termsOfService' in info) {
-      res.push(`**Terms of service:**  \n${info.termsOfService}\n`);
+      //res.push(`**Terms of service:**  \n${info.termsOfService}\n`);
     }
 
     if ('contact' in info) {
-      res.push(transformContact(info.contact));
+      //res.push(transformContact(info.contact));
     }
 
     if ('license' in info) {
-      res.push(transformLicense(info.license));
+      //res.push(transformLicense(info.license));
     }
   }
   return res.length ? res.join('\n') : null;

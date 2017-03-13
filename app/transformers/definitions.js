@@ -14,7 +14,8 @@ const processDefinition = (name, definition) => {
   const linkAnchor = anchor(name);
 
   // Add anchor with name
-  res.push(`<a name="${linkAnchor}"></a>**${name}**  `);
+  res.push(`<a name="${linkAnchor}"></a>`);
+  res.push(`#### ${name}`);
   res.push('');
   res.push('| Name | Type | Description | Required |');
   res.push('| ---- | ---- | ----------- | -------- |');
@@ -26,8 +27,11 @@ const processDefinition = (name, definition) => {
     res.push(`| ${propName} | ${typeCell} | ${descriptionCell} | ${requiredCell} |`);
   });
 
+  res.push('');
+
   return res.length ? res.join('\n') : null;
 };
+
 module.exports.processDefinition = processDefinition;
 
 
@@ -43,7 +47,6 @@ module.exports = definitions => {
     )
   );
   if (res.length > 0) {
-    res.unshift('---');
     res.unshift('### Models');
     return res.join('\n');
   }
